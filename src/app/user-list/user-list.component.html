@@ -1,0 +1,29 @@
+<div class="row h">
+  <div class="col s12 m4" *ngFor="let item of userData">
+    <div class="card ">
+      <div class="card-image">
+        <img [src]="imgUrl+item._id">
+        <a (click)="onEditbtnClick(item._id)" class="btn-floating halfway-fab waves-effect waves-light blue">
+          <i class="material-icons">edit</i>
+        </a>
+      </div>
+      <div class="card-content">
+        <span class="card-title">{{item.firstname}} {{item.lastname}}</span>
+        <p>Tel. {{item.phone}}</p>
+        <p>E-mail. {{item.email}}</p>
+      </div>
+      <div class="card-action">
+        <a (click)="onDelbtnClick(item._id)" class="waves-effect waves-light">
+          <i class="material-icons left">delete</i>{{'button.remove'| translate}}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="fixed-action-btn">
+  <a class="btn-floating btn right green darken-4" (click)="onAddbtnClick()"><i class="material-icons">add</i></a>
+</div>
+
+
+
